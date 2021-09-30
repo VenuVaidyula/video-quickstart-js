@@ -40,6 +40,7 @@ displayLocalVideo(video).then(function(localVideoTrack) {
   // Display a snapshot of the LocalVideoTrack on the canvas.
   videoTrack = localVideoTrack;
   takeSnapshot.onclick = function() {
+    alert('Hello');
     setSnapshotSizeToVideo(el, localVideoTrack);
     takeLocalVideoSnapshot(video, localVideoTrack, el);
   };
