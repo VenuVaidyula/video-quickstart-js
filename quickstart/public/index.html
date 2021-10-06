@@ -28,18 +28,33 @@
       <div class="row" id="room">
         <div id="participants" class="col-xs-12 col-sm-3 col-md-2" style="text-align: center"></div>
         <div id="active-participant" class="col-xs-12 col-sm-9 col-md-10" style="text-align: center">
-          <div class="participant main">
-            <video autoplay playsinline muted></video>
+          <div class="participant main" id="media-container">
+            <video id="videoinputpreview" style="height: auto;" autoplay></video>
           </div>
         </div>
       </div>
       <button id="takesnapshot" class="btn btn-primary btn-block">Take Snapshot</button>
+      <button id="muteVideoBtn" class="btn btn-primary btn-block" >Disable Video</button>
+      <div class="card-block">
+        Video Size:
+        <select id= "renderDimensionsOption" class="btn btn-primary dropdown-toggle disabled">
+          <option value="" disabled selected hidden>Render Dimensions</option>
+          <option value="qHD">960x540</option>
+          <option value="VGA">640x480</option>
+          <option value="QCIF">176x144</option>
+        </select>
+      </div>
       <div class="card">
         <div class="card-block">
           <h4 class="card-title">Snapshot</h4>
-          <canvas class="snapshot-canvas hidden"></canvas>
+          <canvas class="snapshot-canvas" id="snapshotCanvas"></canvas>
           <img class="snapshot-img hidden"></img>
         </div>
+        <h5>State</h5>
+            <div id="p1">
+              <div class="roomstate connected current">Connected</div>
+              <div class="roomstate reconnecting">Reconnecting</div>
+            </div>
       </div>
       <div id="modals">
         <div class="modal fade" id="select-mic" data-backdrop="static" tabindex="-1" role="dialog" aria-labelledby="select-mic-label" aria-hidden="true">
@@ -126,6 +141,5 @@
     <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
     <script src="index.js"></script>
-    <script src="../../examples/localvideosnapshot/public/index.js"></script>
   </body>
 </html>
